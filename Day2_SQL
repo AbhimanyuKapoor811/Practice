@@ -1,0 +1,149 @@
+akapoor@abhimanyu-fasthostv2:~$ mysql -u akapoor -pIZ4K58TNmtah2TA
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 48
+Server version: 10.3.38-MariaDB-0ubuntu0.20.04.1 Ubuntu 20.04
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use Work_Practice;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [Work_Practice]> select * from Persons;
++----------+----------+-----------+----------------+--------+
+| PersonID | LastName | FirstName | Address        | City   |
++----------+----------+-----------+----------------+--------+
+|        1 | Kapoor   | Abhimanyu | Borivali(West) | Mumbai |
++----------+----------+-----------+----------------+--------+
+1 row in set (0.000 sec)
+
+MariaDB [Work_Practice]> insert into Persons values(2, 'Garga', 'Kanishk', 'Andheri(East)', 'Mumbai');
+Query OK, 1 row affected (0.003 sec)
+
+MariaDB [Work_Practice]> select * from Persons;
++----------+----------+-----------+----------------+--------+
+| PersonID | LastName | FirstName | Address        | City   |
++----------+----------+-----------+----------------+--------+
+|        1 | Kapoor   | Abhimanyu | Borivali(West) | Mumbai |
+|        2 | Garga    | Kanishk   | Andheri(East)  | Mumbai |
++----------+----------+-----------+----------------+--------+
+2 rows in set (0.001 sec)
+
+MariaDB [Work_Practice]> update Persons 
+    -> set PersonID = 3 where city = 'Mumbai';
+Query OK, 2 rows affected (0.003 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+MariaDB [Work_Practice]> select * from Persons;
++----------+----------+-----------+----------------+--------+
+| PersonID | LastName | FirstName | Address        | City   |
++----------+----------+-----------+----------------+--------+
+|        3 | Kapoor   | Abhimanyu | Borivali(West) | Mumbai |
+|        3 | Garga    | Kanishk   | Andheri(East)  | Mumbai |
++----------+----------+-----------+----------------+--------+
+2 rows in set (0.001 sec)
+
+MariaDB [Work_Practice]> update Persons
+    -> set PersonID = 1 where LastName = 'Kapoor';
+Query OK, 1 row affected (0.003 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [Work_Practice]> 
+MariaDB [Work_Practice]> select * from  Persons
+    -> ;
++----------+----------+-----------+----------------+--------+
+| PersonID | LastName | FirstName | Address        | City   |
++----------+----------+-----------+----------------+--------+
+|        1 | Kapoor   | Abhimanyu | Borivali(West) | Mumbai |
+|        3 | Garga    | Kanishk   | Andheri(East)  | Mumbai |
++----------+----------+-----------+----------------+--------+
+2 rows in set (0.000 sec)
+
+MariaDB [Work_Practice]> update Persons set PersonID =2  where LastName = 'Garga';
+Query OK, 1 row affected (0.003 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [Work_Practice]> select * from  Persons
+    -> ;
++----------+----------+-----------+----------------+--------+
+| PersonID | LastName | FirstName | Address        | City   |
++----------+----------+-----------+----------------+--------+
+|        1 | Kapoor   | Abhimanyu | Borivali(West) | Mumbai |
+|        2 | Garga    | Kanishk   | Andheri(East)  | Mumbai |
++----------+----------+-----------+----------------+--------+
+2 rows in set (0.000 sec)
+
+MariaDB [Work_Practice]> create table Academics(PersonID int, College_Name varchar(100), City varchar(100), Year int);
+Query OK, 0 rows affected (0.011 sec)
+
+MariaDB [Work_Practice]> insert into Academics
+    -> values (1, 'SPIT', 'Mumbai', 2021);
+Query OK, 1 row affected (0.003 sec)
+
+MariaDB [Work_Practice]> insert into Academics values (2, 'PU', 'Ludhiana', 2021);
+Query OK, 1 row affected (0.003 sec)
+
+MariaDB [Work_Practice]> select * from Academics
+    -> ;
++----------+--------------+----------+------+
+| PersonID | College_Name | City     | Year |
++----------+--------------+----------+------+
+|        1 | SPIT         | Mumbai   | 2021 |
+|        2 | PU           | Ludhiana | 2021 |
++----------+--------------+----------+------+
+2 rows in set (0.001 sec)
+
+MariaDB [Work_Practice]> update Academics set Year = 2020 where PersonID = 2
+    -> ;
+Query OK, 1 row affected (0.003 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [Work_Practice]> select * from Academics;
++----------+--------------+----------+------+
+| PersonID | College_Name | City     | Year |
++----------+--------------+----------+------+
+|        1 | SPIT         | Mumbai   | 2021 |
+|        2 | PU           | Ludhiana | 2020 |
++----------+--------------+----------+------+
+2 rows in set (0.001 sec)
+
+MariaDB [Work_Practice]> select College_Name as ColName from Academics;
++---------+
+| ColName |
++---------+
+| SPIT    |
+| PU      |
++---------+
+2 rows in set (0.000 sec)
+
+MariaDB [Work_Practice]> select * from Academics;
++----------+--------------+----------+------+
+| PersonID | College_Name | City     | Year |
++----------+--------------+----------+------+
+|        1 | SPIT         | Mumbai   | 2021 |
+|        2 | PU           | Ludhiana | 2020 |
++----------+--------------+----------+------+
+2 rows in set (0.000 sec)
+
+MariaDB [Work_Practice]> select College_Name
+    -> from Academics 
+    -> where Year between 1999 and 2021;
++--------------+
+| College_Name |
++--------------+
+| SPIT         |
+| PU           |
++--------------+
+2 rows in set (0.000 sec)
+
+MariaDB [Work_Practice]> select College_Name from Academics  where Year between 1999 and 2020;
++--------------+
+| College_Name |
++--------------+
+| PU           |
++--------------+
+1 row in set (0.000 sec)
+
