@@ -1,0 +1,94 @@
+./snap/firefox:
+1635  common  current
+
+./snap/firefox/1635:
+
+./snap/firefox/common:
+
+./snap/mattermost-desktop:
+618  common  current
+
+./snap/mattermost-desktop/618:
+
+./snap/mattermost-desktop/common:
+
+./snap/snapd-desktop-integration:
+14  83  common  current
+
+./snap/snapd-desktop-integration/14:
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+
+./snap/snapd-desktop-integration/14/Desktop:
+
+./snap/snapd-desktop-integration/14/Documents:
+
+./snap/snapd-desktop-integration/14/Downloads:
+
+./snap/snapd-desktop-integration/14/Music:
+
+./snap/snapd-desktop-integration/14/Pictures:
+
+./snap/snapd-desktop-integration/14/Public:
+
+./snap/snapd-desktop-integration/14/Templates:
+
+./snap/snapd-desktop-integration/14/Videos:
+
+./snap/snapd-desktop-integration/83:
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+
+./snap/snapd-desktop-integration/83/Desktop:
+
+./snap/snapd-desktop-integration/83/Documents:
+
+./snap/snapd-desktop-integration/83/Downloads:
+
+./snap/snapd-desktop-integration/83/Music:
+
+./snap/snapd-desktop-integration/83/Pictures:
+
+./snap/snapd-desktop-integration/83/Public:
+
+./snap/snapd-desktop-integration/83/Templates:
+
+./snap/snapd-desktop-integration/83/Videos:
+
+./snap/snapd-desktop-integration/common:
+
+./snap/snap-store:
+582  common  current
+
+./snap/snap-store/582:
+
+./snap/snap-store/common:
+
+./Templates:
+
+./Videos:
+abimanyu.kapoor@mum-lap-069:~$ cat Day
+cat: Day: No such file or directory
+abimanyu.kapoor@mum-lap-069:~$ cd Desktop
+abimanyu.kapoor@mum-lap-069:~/Desktop$ cd SQL
+abimanyu.kapoor@mum-lap-069:~/Desktop/SQL$ cd Day1
+bash: cd: Day1: No such file or directory
+abimanyu.kapoor@mum-lap-069:~/Desktop/SQL$ cd Day 1
+bash: cd: too many arguments
+abimanyu.kapoor@mum-lap-069:~/Desktop/SQL$ cd DAY 1
+bash: cd: too many arguments
+abimanyu.kapoor@mum-lap-069:~/Desktop/SQL$ cd DAY
+bash: cd: DAY: No such file or directory
+abimanyu.kapoor@mum-lap-069:~/Desktop/SQL$ cat Day1
+cat: Day1: No such file or directory
+abimanyu.kapoor@mum-lap-069:~/Desktop/SQL$ cat > Day1
+Hello
+^C
+abimanyu.kapoor@mum-lap-069:~/Desktop/SQL$ cat Day1
+Hello
+abimanyu.kapoor@mum-lap-069:~/Desktop/SQL$ cd - _
+bash: cd: too many arguments
+abimanyu.kapoor@mum-lap-069:~/Desktop/SQL$ 
+abimanyu.kapoor@mum-lap-069:~/Desktop/SQL$ cd --
+abimanyu.kapoor@mum-lap-069:~$ cd Desktop
+abimanyu.kapoor@mum-lap-069:~/Desktop$ cd SQL
+abimanyu.kapoor@mum-lap-069:~/Desktop/SQL$ cd -
+/home/abimanyu.kapoor/Desktop
